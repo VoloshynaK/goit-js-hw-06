@@ -3,7 +3,10 @@ const refs = {
     nameLabel: document.querySelector('#name-output'),
 };
 
-refs.input.addEventListener('input', onInput)
+refs.input.addEventListener('input', onInput);
 function onInput(event) {
     refs.nameLabel.textContent = event.currentTarget.value;
+    if (event.currentTarget.value === "") {
+        refs.nameLabel.textContent = 'Anonymous';
+    };
 }
